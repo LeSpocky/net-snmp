@@ -34,6 +34,16 @@ matrix:
       BUILD: MSYS2
     - image: Ubuntu2204
       BUILD: MinGW64
+    - image: Ubuntu2204
+      BUILD: MSVCSTATIC64
+    - image: Ubuntu2204
+      BUILD: INSTALLER
+    - image: Ubuntu2204
+      BUILD: MinGW32
+    - image: Ubuntu2204
+      BUILD: MSYS2
+    - image: Ubuntu2204
+      BUILD: MinGW64
     - image: macos-monterey
       BUILD: MSVCSTATIC64
     - image: macos-monterey
