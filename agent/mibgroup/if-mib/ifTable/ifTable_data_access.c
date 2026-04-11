@@ -429,9 +429,9 @@ _check_interface_entry_for_updates(ifTable_rowreq_ctx *rowreq_ctx,
 #ifdef USING_IF_MIB_IFXTABLE_IFXTABLE_MODULE
         {
             netsnmp_interface_entry *prev = rowreq_ctx->data.ifentry;
-            if (prev && prev->name && ifentry->name
-                && (prev->ns_flags
-                    & NETSNMP_INTERFACE_FLAGS_HAS_HIGH_SPEED)) {
+
+            if (prev && prev->name &&
+                (prev->ns_flags & NETSNMP_INTERFACE_FLAGS_HAS_HIGH_SPEED)) {
                 int disc = 0;
                 if (ifentry->stats.ibytes.high < prev->stats.ibytes.high
                     || (ifentry->stats.ibytes.high
