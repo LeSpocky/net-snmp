@@ -757,8 +757,8 @@ netsnmp_access_interface_entry_copy(netsnmp_interface_entry * lhs,
             /* u64Subtract wrapped: imcast > iall due to per-CPU race. */
             DEBUGMSGTL(("access:interface",
                      "ifHCInUcastPkts underflow on %s"
-                     " (iucast=%u:%u > iall=%u:%u),"
-                     " holding previous iucast=%u:%u\n",
+                     " (iucast=%lu:%lu > iall=%lu:%lu),"
+                     " holding previous iucast=%lu:%lu\n",
                      lhs->name ? lhs->name : "?",
                      lhs->stats.iucast.high, lhs->stats.iucast.low,
                      lhs->stats.iall.high, lhs->stats.iall.low,
@@ -770,7 +770,7 @@ netsnmp_access_interface_entry_copy(netsnmp_interface_entry * lhs,
             /* iall non-decreasing but iucast decreased -- race. */
             DEBUGMSGTL(("access:interface",
                      "ifHCInUcastPkts would decrease on %s"
-                     " (%u:%u -> %u:%u), holding previous\n",
+                     " (%lu:%lu -> %lu:%lu), holding previous\n",
                      lhs->name ? lhs->name : "?",
                      prev_iucast.high, prev_iucast.low,
                      lhs->stats.iucast.high, lhs->stats.iucast.low));
